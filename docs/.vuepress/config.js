@@ -3,7 +3,7 @@
  * @LastEditors: jun.fu<fujunchn@qq.com>
  * @Description: file content
  * @Date: 2020-12-22 16:09:18
- * @LastEditTime: 2020-12-23 10:48:46
+ * @LastEditTime: 2020-12-23 10:53:56
  * @FilePath: /notes/docs/.vuepress/config.js
  */
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
         '探寻下Webpack的打包的模块化机制',
         { title: "探索下setState的原理", path: "探索下setState的原理" }
       ],
-      '/linux/': ['', 'Docker'],
+      '/linux/': ['', 'Docker','搭建代理服务器'],
     },
     lastUpdated: 'Last Updated', // string | boolean
     sidebarDepth: 3,
