@@ -3,7 +3,7 @@
  * @LastEditors: jun.fu<fujunchn@qq.com>
  * @Description: file content
  * @Date: 2020-12-22 16:09:18
- * @LastEditTime: 2020-12-23 10:53:56
+ * @LastEditTime: 2020-12-23 12:21:06
  * @FilePath: /notes/docs/.vuepress/config.js
  */
 module.exports = {
@@ -30,4 +30,6 @@ module.exports = {
     lastUpdated: 'Last Updated', // string | boolean
     sidebarDepth: 3,
   },
+  dest:'dist',
+  base:'/notes/'
 };
