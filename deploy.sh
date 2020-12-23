@@ -4,7 +4,7 @@
  # @LastEditors: jun.fu<fujunchn@qq.com>
  # @Description: file content
  # @Date: 2020-12-23 12:17:51
- # @LastEditTime: 2020-12-23 12:20:42
+ # @LastEditTime: 2020-12-23 12:23:22
  # @FilePath: /notes/deploy.sh
 ### 
 
@@ -12,7 +12,7 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+npm run build
 
 # 进入生成的文件夹
 cd dist
