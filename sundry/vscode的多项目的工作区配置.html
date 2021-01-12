@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vscode的多项目的工作区配置 | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="仅仅是菜鸡的自我总结">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.5ebdd62d.css" as="style"><link rel="preload" href="/notes/assets/js/app.b784a555.js" as="script"><link rel="preload" href="/notes/assets/js/2.1ec2aeec.js" as="script"><link rel="preload" href="/notes/assets/js/14.7a44aefc.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.e309f27b.js"><link rel="prefetch" href="/notes/assets/js/11.36ba437c.js"><link rel="prefetch" href="/notes/assets/js/12.ce2e3a78.js"><link rel="prefetch" href="/notes/assets/js/13.0ebc70ac.js"><link rel="prefetch" href="/notes/assets/js/3.fd595143.js"><link rel="prefetch" href="/notes/assets/js/4.b163c92d.js"><link rel="prefetch" href="/notes/assets/js/5.ab60e171.js"><link rel="prefetch" href="/notes/assets/js/6.55d63423.js"><link rel="prefetch" href="/notes/assets/js/7.92cfe9a0.js"><link rel="prefetch" href="/notes/assets/js/8.0e68766b.js"><link rel="prefetch" href="/notes/assets/js/9.1d7d2203.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.5ebdd62d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/javascript/探索下es6的class以及继承的原理.html" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/notes/linux/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/notes/sundry/vscode的多项目的工作区配置.html" class="nav-link">
+  杂项
+</a></div><div class="nav-item"><a href="https://github.com/SignDigit1/notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/javascript/探索下es6的class以及继承的原理.html" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/notes/linux/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/notes/sundry/vscode的多项目的工作区配置.html" class="nav-link">
+  杂项
+</a></div><div class="nav-item"><a href="https://github.com/SignDigit1/notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notes/sundry/vscode的多项目的工作区配置.html" class="active sidebar-link">vscode的多项目的工作区配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#脚本解析" class="sidebar-link">脚本解析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#参数定义" class="sidebar-link">参数定义</a></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#参数校验" class="sidebar-link">参数校验</a></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#数据准备" class="sidebar-link">数据准备</a></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#做一次确认" class="sidebar-link">做一次确认</a></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#执行" class="sidebar-link">执行</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#功能" class="sidebar-link">功能</a></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/notes/sundry/vscode的多项目的工作区配置.html#完整代码" class="sidebar-link">完整代码</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vscode的多项目的工作区配置"><a href="#vscode的多项目的工作区配置" class="header-anchor">#</a> vscode的多项目的工作区配置</h1> <p>​因为一些工作上的原因，所以希望能够对工作的项目做一些单独的配置，包括但不限于对于插件的启停，对于部分插件的特殊配置等。</p> <p>​一开始想到的方案是将所有文件夹均加入到一个工作区中，但这样有个问题，你必须打开工作区才能启用对应的工作区配置，而如果将几个项目添加到一个工作区后，打开一个工作区就会导致打开了多个项目，对于我现在这种一个窗口对应一个项目而言，感觉很不习惯。如果单独在每个项目下配置一个独有的工作区，感觉又十分的麻烦。</p> <p>最终在<a href="https://zhuanlan.zhihu.com/p/54770077" target="_blank" rel="noopener noreferrer">知乎的评论区<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>里找到了一个曲线的解决方案，就是通过强链接的方式，将配置文件直接链接到每个项目下面，这样，只要修改一个文件，其他工作区配置也会同步修改，同时，vscode能够读取到当前目录下的工作区文件，所以只需要打开项目文件夹，仍能够使用工作区的配置。不过由于手动配置强链接仍然感觉有点麻烦，所以我决定写个shell文件来完成这件事。</p> <h2 id="脚本解析"><a href="#脚本解析" class="header-anchor">#</a> 脚本解析</h2> <h3 id="参数定义"><a href="#参数定义" class="header-anchor">#</a> 参数定义</h3> <p>首先需要定义好需要用到的一些参数，以及这些参数是否要通过命令行获取</p> <ul><li>file: 该参数是用来定义需要进行链接的文件，命令行通过 <code>-f [file]</code> 来获取</li> <li>path: 当前运行的文件路径</li> <li>dir：将要去进行链接的目标路径，命令行通过<code>-d [dir]</code>来获取</li> <li>curDir：是链接的路径是dir还是dir的子路径，默认是子路径，命令行通过<code>-c</code>使用dir路径</li> <li>aliasName：将要链接生成的目标文件别名，命令行通过<code>-n [name]</code>来获取</li></ul> <p>我是通过getopts来进行的参数的获取及部分判断。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token comment">#当前文件</span>
+<span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span> <span class="token comment">#当前的路径</span>
+<span class="token assign-left variable">dir</span><span class="token operator">=</span><span class="token variable">$path</span> <span class="token comment">#要进行链接的路径</span>
+<span class="token assign-left variable">curDir</span><span class="token operator">=</span>false <span class="token comment">#是链接到当前链接文件夹还是子文件夹</span>
+<span class="token assign-left variable">aliasName</span><span class="token operator">=</span>null <span class="token comment">#链接文件的别名</span>
+
+
+<span class="token keyword">while</span> <span class="token builtin class-name">getopts</span> :f:d:n:c opt
+<span class="token keyword">do</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$opt</span>&quot;</span> <span class="token keyword">in</span>
+      f<span class="token punctuation">)</span> <span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      d<span class="token punctuation">)</span> <span class="token assign-left variable">dir</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      n<span class="token punctuation">)</span> <span class="token assign-left variable">aliasName</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      c<span class="token punctuation">)</span> <span class="token assign-left variable">curDir</span><span class="token operator">=</span>true <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      <span class="token builtin class-name">:</span><span class="token punctuation">)</span>  <span class="token comment"># 没有为需要参数的选项指定参数</span>
+           <span class="token builtin class-name">echo</span> <span class="token string">&quot;This option -<span class="token variable">$OPTARG</span> requires an argument.&quot;</span>
+          <span class="token builtin class-name">exit</span> <span class="token number">1</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      ?<span class="token punctuation">)</span> <span class="token comment"># 发现了无效的选项</span>
+          <span class="token builtin class-name">echo</span> <span class="token string">&quot;-<span class="token variable">$OPTARG</span> is not an option&quot;</span>
+          <span class="token builtin class-name">exit</span> <span class="token number">2</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+</code></pre></div><h3 id="参数校验"><a href="#参数校验" class="header-anchor">#</a> 参数校验</h3> <h4 id="判断文件是否存在"><a href="#判断文件是否存在" class="header-anchor">#</a> 判断文件是否存在</h4> <p>这里就是用<code>-f</code>来判断文件是否存在。我这里同时判断了<code>$path/$file</code>的全路径，但感觉没必要，因为如果脚本执行和文件在同一路径下，文件使用的是相对位置，不需要拼路径也能找到；如果不在同一路径下，文件使用绝对路径，同样不需要拼路径。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -f <span class="token string">&quot;<span class="token variable">$file</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">&quot;<span class="token variable">$path</span>/<span class="token variable">$file</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+    <span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token variable">$path</span>/<span class="token variable">$file</span><span class="token string">&quot;&quot;</span>
+  <span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$file</span> 文件不存在&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">3</span>
+  <span class="token keyword">fi</span>
+<span class="token keyword">fi</span>
+</code></pre></div><h4 id="判断目标目录是否存在"><a href="#判断目标目录是否存在" class="header-anchor">#</a> 判断目标目录是否存在</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -d <span class="token string">&quot;<span class="token variable">$dir</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$dir</span> 目录地址不正确&quot;</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">4</span>
+<span class="token keyword">fi</span>
+</code></pre></div><h3 id="数据准备"><a href="#数据准备" class="header-anchor">#</a> 数据准备</h3> <p>判断有没有别名，如果有的话，目标文件名就是别名+当前文件的类型；如果没有的话，目标文件名就是当前文件名。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$aliasName</span>&quot;</span> <span class="token operator">==</span> null <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token assign-left variable">filename</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">basename</span> $file<span class="token variable">`</span></span>
+<span class="token keyword">else</span>
+  <span class="token assign-left variable">filename</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$aliasName</span>.<span class="token variable">${file<span class="token operator">##</span>*.}</span>&quot;</span>
+<span class="token keyword">fi</span>
+</code></pre></div><h3 id="做一次确认"><a href="#做一次确认" class="header-anchor">#</a> 做一次确认</h3> <p>用read方法，给用户做最后一次确认，输入的不是y|yes，退出程序。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;当前的文件-----<span class="token variable">$file</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;将要链接的文件名-----<span class="token variable">$filename</span>&quot;</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$curDir</span>&quot;</span> <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;将要链接到的目录-----<span class="token variable">$dir</span>&quot;</span>
+<span class="token keyword">else</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;将要链接到的目录-----<span class="token variable">$dir</span>/*&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">read</span> -r -p <span class="token string">&quot;确定吗? [Y/n] &quot;</span> input
+<span class="token keyword">case</span> <span class="token variable">$input</span> <span class="token keyword">in</span>
+    <span class="token punctuation">[</span>yY<span class="token punctuation">]</span><span class="token punctuation">[</span>eE<span class="token punctuation">]</span><span class="token punctuation">[</span>sS<span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span>yY<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  		<span class="token builtin class-name">echo</span> <span class="token string">&quot;Yes&quot;</span>
+  		<span class="token punctuation">;</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">[</span>nN<span class="token punctuation">]</span><span class="token punctuation">[</span>oO<span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span>nN<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	  	<span class="token builtin class-name">echo</span> <span class="token string">&quot;No&quot;</span>
+      <span class="token builtin class-name">exit</span> <span class="token number">9</span>
+      <span class="token punctuation">;</span><span class="token punctuation">;</span>
+
+    *<span class="token punctuation">)</span>
+		  <span class="token builtin class-name">echo</span> <span class="token string">&quot;Invalid input...&quot;</span>
+	  	<span class="token builtin class-name">exit</span> <span class="token number">9</span>
+	  	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+</code></pre></div><h3 id="执行"><a href="#执行" class="header-anchor">#</a> 执行</h3> <p>我这里使用强链接，遍历目录来进行目标目录下的目标文件的链接生成</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$curDir</span>&quot;</span> <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;强链接到 <span class="token variable">$dir</span> 目录下&quot;</span>
+  <span class="token assign-left variable">toGenerateFile</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$dir</span>/<span class="token variable">$filename</span>&quot;</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$file</span> ---链接--- <span class="token variable">$dir</span>/<span class="token variable">$filename</span>&quot;</span>
+  <span class="token function">ln</span> <span class="token variable">$file</span> <span class="token variable">$toGenerateFile</span>
+<span class="token keyword">else</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;强链接到 <span class="token variable">$dir</span> 的子目录下&quot;</span>
+  <span class="token keyword">for</span> <span class="token for-or-select variable">childDir</span> <span class="token keyword">in</span> <span class="token variable">$dir</span>/*
+  <span class="token keyword">do</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token string">&quot;<span class="token variable">$childDir</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span> 
+      <span class="token assign-left variable">toGenerateFile</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$childDir</span>/<span class="token variable">$filename</span>&quot;</span>
+      <span class="token comment"># 如果已经存在文件，则跳过</span>
+      <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -f <span class="token string">&quot;<span class="token variable">$toGenerateFile</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$file</span> ---链接--- <span class="token variable">$toGenerateFile</span>&quot;</span>
+        <span class="token function">ln</span> <span class="token variable">$file</span> <span class="token variable">$toGenerateFile</span>
+      <span class="token keyword">fi</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">done</span>
+<span class="token keyword">fi</span>
+</code></pre></div><h2 id="功能"><a href="#功能" class="header-anchor">#</a> 功能</h2> <ul><li>[ √ ] 主要功能，遍历生成强链接工作区文件</li> <li>[ √ ] 可配置的目标目录</li> <li>[ √ ] 可配置的目标文件别名</li> <li>[ × ] 工作区插件配置。 我没有搞清楚工作区插件禁用的配置vscode到底存在哪里，目前单纯复制工作区配置文件不会同步工作区的插件禁用配置。</li> <li>[ × ] 自动修改gitignore文件</li></ul> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>目前该方案还有一些缺点和一些功能没有实现，有时间的话会继续完善。不知道类似这方面的需求其他人有没有，如果需求量大的话希望vscode能够给出一个比较好的官方解决方案，也祝vscode能够越做越好。</p> <h2 id="完整代码"><a href="#完整代码" class="header-anchor">#</a> 完整代码</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/sh</span>
+
+<span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token comment">#当前文件</span>
+<span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span> <span class="token comment">#当前的路径</span>
+<span class="token assign-left variable">dir</span><span class="token operator">=</span><span class="token variable">$path</span> <span class="token comment">#要进行链接的路径</span>
+<span class="token assign-left variable">curDir</span><span class="token operator">=</span>false <span class="token comment">#是链接到当前链接文件夹还是子文件夹</span>
+<span class="token assign-left variable">aliasName</span><span class="token operator">=</span>null <span class="token comment">#链接文件的别名</span>
+
+
+<span class="token keyword">while</span> <span class="token builtin class-name">getopts</span> :f:d:n:c opt
+<span class="token keyword">do</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$opt</span>&quot;</span> <span class="token keyword">in</span>
+      f<span class="token punctuation">)</span> <span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      d<span class="token punctuation">)</span> <span class="token assign-left variable">dir</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      n<span class="token punctuation">)</span> <span class="token assign-left variable">aliasName</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$OPTARG</span>&quot;</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      c<span class="token punctuation">)</span> <span class="token assign-left variable">curDir</span><span class="token operator">=</span>true <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      <span class="token builtin class-name">:</span><span class="token punctuation">)</span>  <span class="token comment"># 没有为需要参数的选项指定参数</span>
+           <span class="token builtin class-name">echo</span> <span class="token string">&quot;This option -<span class="token variable">$OPTARG</span> requires an argument.&quot;</span>
+          <span class="token builtin class-name">exit</span> <span class="token number">1</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+      ?<span class="token punctuation">)</span> <span class="token comment"># 发现了无效的选项</span>
+          <span class="token builtin class-name">echo</span> <span class="token string">&quot;-<span class="token variable">$OPTARG</span> is not an option&quot;</span>
+          <span class="token builtin class-name">exit</span> <span class="token number">2</span> <span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+
+<span class="token comment">#echo $file $dir &quot;$path/$file&quot;</span>
+
+<span class="token comment"># 判断文件是否存在</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -f <span class="token string">&quot;<span class="token variable">$file</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">&quot;<span class="token variable">$path</span>/<span class="token variable">$file</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+    <span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token variable">$path</span>/<span class="token variable">$file</span><span class="token string">&quot;&quot;</span>
+  <span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$file</span> 文件不存在&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">3</span>
+  <span class="token keyword">fi</span>
+<span class="token keyword">fi</span>
+
+
+<span class="token comment"># 判断目标目录是否存在</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -d <span class="token string">&quot;<span class="token variable">$dir</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$dir</span> 目录地址不正确&quot;</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">4</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># 拼接将要链接的文件名</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$aliasName</span>&quot;</span> <span class="token operator">==</span> null <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token assign-left variable">filename</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">basename</span> $file<span class="token variable">`</span></span>
+<span class="token keyword">else</span>
+  <span class="token assign-left variable">filename</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$aliasName</span>.<span class="token variable">${file<span class="token operator">##</span>*.}</span>&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span>
+
+<span class="token comment"># 输入框进行确认</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;当前的文件-----<span class="token variable">$file</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;将要链接的文件名-----<span class="token variable">$filename</span>&quot;</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$curDir</span>&quot;</span> <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;将要链接到的目录-----<span class="token variable">$dir</span>&quot;</span>
+<span class="token keyword">else</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;将要链接到的目录-----<span class="token variable">$dir</span>/*&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">read</span> -r -p <span class="token string">&quot;确定吗? [Y/n] &quot;</span> input
+<span class="token keyword">case</span> <span class="token variable">$input</span> <span class="token keyword">in</span>
+    <span class="token punctuation">[</span>yY<span class="token punctuation">]</span><span class="token punctuation">[</span>eE<span class="token punctuation">]</span><span class="token punctuation">[</span>sS<span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span>yY<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  		<span class="token builtin class-name">echo</span> <span class="token string">&quot;Yes&quot;</span>
+  		<span class="token punctuation">;</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">[</span>nN<span class="token punctuation">]</span><span class="token punctuation">[</span>oO<span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span>nN<span class="token punctuation">]</span><span class="token punctuation">)</span>
+	  	<span class="token builtin class-name">echo</span> <span class="token string">&quot;No&quot;</span>
+      <span class="token builtin class-name">exit</span> <span class="token number">9</span>
+      <span class="token punctuation">;</span><span class="token punctuation">;</span>
+
+    *<span class="token punctuation">)</span>
+		  <span class="token builtin class-name">echo</span> <span class="token string">&quot;Invalid input...&quot;</span>
+	  	<span class="token builtin class-name">exit</span> <span class="token number">9</span>
+	  	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+
+<span class="token comment"># 遍历执行链接</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$curDir</span>&quot;</span> <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;强链接到 <span class="token variable">$dir</span> 目录下&quot;</span>
+  <span class="token assign-left variable">toGenerateFile</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$dir</span>/<span class="token variable">$filename</span>&quot;</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$file</span> ---链接--- <span class="token variable">$dir</span>/<span class="token variable">$filename</span>&quot;</span>
+  <span class="token function">ln</span> <span class="token variable">$file</span> <span class="token variable">$toGenerateFile</span>
+<span class="token keyword">else</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;强链接到 <span class="token variable">$dir</span> 的子目录下&quot;</span>
+  <span class="token keyword">for</span> <span class="token for-or-select variable">childDir</span> <span class="token keyword">in</span> <span class="token variable">$dir</span>/*
+  <span class="token keyword">do</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token string">&quot;<span class="token variable">$childDir</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span> 
+      <span class="token assign-left variable">toGenerateFile</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$childDir</span>/<span class="token variable">$filename</span>&quot;</span>
+      <span class="token comment"># 如果已经存在文件，则跳过</span>
+      <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -f <span class="token string">&quot;<span class="token variable">$toGenerateFile</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$file</span> ---链接--- <span class="token variable">$toGenerateFile</span>&quot;</span>
+        <span class="token function">ln</span> <span class="token variable">$file</span> <span class="token variable">$toGenerateFile</span>
+      <span class="token keyword">fi</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">done</span>
+<span class="token keyword">fi</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/12/2021, 5:46:14 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/notes/assets/js/app.b784a555.js" defer></script><script src="/notes/assets/js/2.1ec2aeec.js" defer></script><script src="/notes/assets/js/14.7a44aefc.js" defer></script>
+  </body>
+</html>
