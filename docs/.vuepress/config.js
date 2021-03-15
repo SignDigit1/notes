@@ -3,7 +3,7 @@
  * @LastEditors: jun.fu<fujunchn@qq.com>
  * @Description: file content
  * @Date: 2020-12-22 16:09:18
- * @LastEditTime: 2021-01-12 17:29:23
+ * @LastEditTime: 2021-03-15 15:52:31
  * @FilePath: /notes/docs/.vuepress/config.js
  */
 module.exports = {
@@ -24,7 +24,8 @@ module.exports = {
       '/javascript/': [
         '探索下es6的class以及继承的原理',
         '探寻下Webpack的打包的模块化机制',
-        { title: "探索下setState的原理", path: "探索下setState的原理" }
+        { title: "探索下setState的原理", path: "探索下setState的原理" },
+        '探索下react的渲染过程'
       ],
       '/linux/': ['', 'Docker','搭建代理服务器'],
       '/sundry/':['vscode的多项目的工作区配置']
