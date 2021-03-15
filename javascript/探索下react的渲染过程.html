@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>探索下react的渲染过程 | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="仅仅是菜鸡的自我总结">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.aa6162e3.css" as="style"><link rel="preload" href="/notes/assets/js/app.ac7bf9e2.js" as="script"><link rel="preload" href="/notes/assets/js/2.b4d22a6a.js" as="script"><link rel="preload" href="/notes/assets/js/9.97b843e9.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.ee4c156b.js"><link rel="prefetch" href="/notes/assets/js/11.98c6dbb1.js"><link rel="prefetch" href="/notes/assets/js/12.b3f2ea3d.js"><link rel="prefetch" href="/notes/assets/js/13.a6d2a3e3.js"><link rel="prefetch" href="/notes/assets/js/14.fa976f3f.js"><link rel="prefetch" href="/notes/assets/js/15.dd38506f.js"><link rel="prefetch" href="/notes/assets/js/3.4b78b003.js"><link rel="prefetch" href="/notes/assets/js/4.de51d5a4.js"><link rel="prefetch" href="/notes/assets/js/5.b9f7efa5.js"><link rel="prefetch" href="/notes/assets/js/6.f8d317ef.js"><link rel="prefetch" href="/notes/assets/js/7.207fad62.js"><link rel="prefetch" href="/notes/assets/js/8.9e3a1e0c.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.aa6162e3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/javascript/探索下es6的class以及继承的原理.html" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/notes/linux/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/notes/sundry/vscode的多项目的工作区配置.html" class="nav-link">
+  杂项
+</a></div><div class="nav-item"><a href="https://github.com/SignDigit1/notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/javascript/探索下es6的class以及继承的原理.html" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/notes/linux/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/notes/sundry/vscode的多项目的工作区配置.html" class="nav-link">
+  杂项
+</a></div><div class="nav-item"><a href="https://github.com/SignDigit1/notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notes/javascript/探索下es6的class以及继承的原理.html" class="sidebar-link">探索下es6的class以及继承的原理</a></li><li><a href="/notes/javascript/探寻下Webpack的打包的模块化机制.html" class="sidebar-link">探寻下Webpack的打包的模块化机制</a></li><li><a href="/notes/javascript/探索下setState的原理.html" class="sidebar-link">探索下setState的原理</a></li><li><a href="/notes/javascript/探索下react的渲染过程.html" class="active sidebar-link">探索下react的渲染过程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/javascript/探索下react的渲染过程.html#序言" class="sidebar-link">序言</a></li><li class="sidebar-sub-header"><a href="/notes/javascript/探索下react的渲染过程.html#开始" class="sidebar-link">开始</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/javascript/探索下react的渲染过程.html#初始化阶段" class="sidebar-link">初始化阶段</a></li></ul></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="探索下react的渲染过程"><a href="#探索下react的渲染过程" class="header-anchor">#</a> 探索下react的渲染过程</h1> <h2 id="序言"><a href="#序言" class="header-anchor">#</a> 序言</h2> <p>一直以来，对于react渲染过程的了解都是知其然不知其所以然，虽然在网上看了不少资料，但是总是看过就忘。这次就借着梳理的机会，一步步的走下react的渲染过程。</p> <p>我所使用的版本为&quot;react&quot;: &quot;16.8.6&quot;, &quot;react-dom&quot;: &quot;16.8.6&quot;。</p> <h2 id="开始"><a href="#开始" class="header-anchor">#</a> 开始</h2> <p>我目前看的教程，里面将react的渲染过程分为了三个阶段：legacyRenderSubtreeIntoContainer开始，直到scheduleUpdateOnFiber为初始化阶段，scheduleUpdateOnFiber到commitRoot为render阶段，commitRoot以后为commit阶段。个人觉得还是很有道理，所以我也就按照这个思路来进行梳理。</p> <h3 id="初始化阶段"><a href="#初始化阶段" class="header-anchor">#</a> 初始化阶段</h3> <h4 id="render函数"><a href="#render函数" class="header-anchor">#</a> render函数</h4> <p>首先当然是从我们熟悉的react的入口render来开始</p> <p><img src="/notes/assets/img/image-20210305162547907.5c606039.png" alt="image-20210305162547907"></p> <p>render位于react-dom包内，在render函数里，去除一些对于组件和dom的判断，实际仅仅是调用了一个函数</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/15/2021, 7:57:45 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/javascript/探索下setState的原理.html" class="prev">
+        探索下setState的原理
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notes/assets/js/app.ac7bf9e2.js" defer></script><script src="/notes/assets/js/2.b4d22a6a.js" defer></script><script src="/notes/assets/js/9.97b843e9.js" defer></script>
+  </body>
+</html>
