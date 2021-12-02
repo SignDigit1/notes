@@ -120,4 +120,6 @@ updateContainer主要救赎做了三件事
 
 > 这里之所以使同步，还因为我们的入口使用的是legacy 模式，即ReactDOM.render(<App />, rootNode)。这是当前 React App 使用的方式，当前没有计划删除本模式，但是这个模式可能不支持这些新功能。
 
-![image-20211202134803381](https://gitee.com/nocry/img-bed/raw/master/img/image-20211202134803381.png)
+![image-20211202134803381](https://gitee.com/nocry/img-bed/raw/master/img/image-20211202140845200.png)
+
+![image-20211202143048619](https://gitee.com/nocry/img-bed/raw/master/img/image-20211202143048619.png)
