@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>搭建代理服务器 | 学习笔记</title>
-    <meta name="generator" content="VuePress 1.8.2">
+    <meta name="generator" content="VuePress 1.7.1">
     
     <meta name="description" content="仅仅是菜鸡的自我总结">
     
-    <link rel="preload" href="/notes/assets/css/0.styles.aa6162e3.css" as="style"><link rel="preload" href="/notes/assets/js/app.a88f5841.js" as="script"><link rel="preload" href="/notes/assets/js/2.89b3a823.js" as="script"><link rel="preload" href="/notes/assets/js/10.81298cf3.js" as="script"><link rel="prefetch" href="/notes/assets/js/11.6e883eb1.js"><link rel="prefetch" href="/notes/assets/js/12.a20f13d7.js"><link rel="prefetch" href="/notes/assets/js/13.b154d693.js"><link rel="prefetch" href="/notes/assets/js/14.9c23911f.js"><link rel="prefetch" href="/notes/assets/js/15.00e39b0f.js"><link rel="prefetch" href="/notes/assets/js/3.1ca6419e.js"><link rel="prefetch" href="/notes/assets/js/4.3ac74433.js"><link rel="prefetch" href="/notes/assets/js/5.875d6001.js"><link rel="prefetch" href="/notes/assets/js/6.d5f3e3a9.js"><link rel="prefetch" href="/notes/assets/js/7.8acb74f8.js"><link rel="prefetch" href="/notes/assets/js/8.8ad306da.js"><link rel="prefetch" href="/notes/assets/js/9.13e47575.js">
-    <link rel="stylesheet" href="/notes/assets/css/0.styles.aa6162e3.css">
+    <link rel="preload" href="/notes/assets/css/0.styles.9218c62b.css" as="style"><link rel="preload" href="/notes/assets/js/app.b78d8b7f.js" as="script"><link rel="preload" href="/notes/assets/js/2.14e5eccc.js" as="script"><link rel="preload" href="/notes/assets/js/10.ea476ec9.js" as="script"><link rel="prefetch" href="/notes/assets/js/11.9f9a2760.js"><link rel="prefetch" href="/notes/assets/js/12.c2457158.js"><link rel="prefetch" href="/notes/assets/js/13.6f73a323.js"><link rel="prefetch" href="/notes/assets/js/14.448e48e0.js"><link rel="prefetch" href="/notes/assets/js/15.51c176ce.js"><link rel="prefetch" href="/notes/assets/js/3.23fb233d.js"><link rel="prefetch" href="/notes/assets/js/4.2cdbb584.js"><link rel="prefetch" href="/notes/assets/js/5.9271a042.js"><link rel="prefetch" href="/notes/assets/js/6.46d67976.js"><link rel="prefetch" href="/notes/assets/js/7.8fee5f61.js"><link rel="prefetch" href="/notes/assets/js/8.28c361cf.js"><link rel="prefetch" href="/notes/assets/js/9.bcf24572.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.9218c62b.css">
   </head>
   <body>
     <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link">
@@ -57,11 +57,11 @@
     <span class="token property">&quot;timeout&quot;</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span> <span class="token comment">// 超时时间</span>
     <span class="token property">&quot;method&quot;</span><span class="token operator">:</span> <span class="token string">&quot;aes-256-gcm&quot;</span> <span class="token comment">// 加密方式，跟服务器配置的一致，默认为aes-256-gcm</span>
 <span class="token punctuation">}</span>
-</code></pre></div><h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <p>打开shadowsocks即可</p> <ul><li>全局模式</li></ul> <blockquote><p>将会代理所以的请求，自测可用</p></blockquote> <ul><li>pac模式</li></ul> <blockquote><p>只会代理配置的路径请求</p> <p>⚠️  我的pac还没整明白，目前使用不了这种方式，有知道的大佬希望能告知一下</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/18/2021, 8:49:55 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <p>打开shadowsocks即可</p> <ul><li>全局模式</li></ul> <blockquote><p>将会代理所以的请求，自测可用</p></blockquote> <ul><li>pac模式</li></ul> <blockquote><p>只会代理配置的路径请求</p> <p>⚠️  我的pac还没整明白，目前使用不了这种方式，有知道的大佬希望能告知一下</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">12/2/2021, 6:10:25 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/notes/linux/Docker.html" class="prev">
         Docker
       </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/notes/assets/js/app.a88f5841.js" defer></script><script src="/notes/assets/js/2.89b3a823.js" defer></script><script src="/notes/assets/js/10.81298cf3.js" defer></script>
+    <script src="/notes/assets/js/app.b78d8b7f.js" defer></script><script src="/notes/assets/js/2.14e5eccc.js" defer></script><script src="/notes/assets/js/10.ea476ec9.js" defer></script>
   </body>
 </html>
